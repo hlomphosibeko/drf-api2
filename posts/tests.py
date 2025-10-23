@@ -46,13 +46,13 @@ class PostDetailViewTests(APITestCase):
         response = self.client.get('/posts/999/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-    # def test_user_can_update_own_post(self):
-    #     user = User.objects.get(username='olaf')
-    #     self.client.force_authenticate(user=user)
-    #     response = self.client.put('/posts/1/', {'title': 'a new title'})
-    #     post = Post.objects.filter(pk=1).first()
-    #     self.assertEqual(post.title, 'a new title')
-    #     self.assertEqual(response.status_code, status.HTTP_200_OK)
+    def test_user_can_update_own_post(self):
+        user = User.objects.get(username='olaf')
+        self.client.force_authenticate(user=user)
+        response = self.client.put('/posts/1/', {'title': 'a new title'})
+        post = Post.objects.filter(pk=1).first()
+        self.assertEqual(post.title, 'a new title')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     # def test_user_cant_update_another_users_post(self):
     #     user = User.objects.get(username='olaf')
