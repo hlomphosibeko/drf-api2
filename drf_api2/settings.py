@@ -96,6 +96,7 @@ INSTALLED_APPS = [
     'followers',
     'insurance',
     'quotes',
+    'payments',
 ]
 
 SITE_ID = 1
