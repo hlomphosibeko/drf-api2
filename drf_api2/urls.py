@@ -35,4 +35,5 @@ urlpatterns = [
     path('', include('followers.urls')),
     path('', include('insurance.urls')),
     path('', include('quotes.urls')),
+    path('', include('payments.urls')),
 ]
