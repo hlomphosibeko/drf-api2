@@ -1,1 +1,1 @@
-# drf-api2
+# Lobolo Insurance Project
