@@ -18,13 +18,14 @@ class Quote(models.Model):
     neat = models.BooleanField(default=False)
     steady_income = models.BooleanField(default=False)
     personality = models.PositiveIntegerField()
-    spirituality = models.PositiveBigIntegerField()
+    spirituality = models.PositiveIntegerField()
     innocence = models.PositiveIntegerField()
     premium_plan = models.DecimalField(
-        max_digits=10, decimal_places=2, default=0)
+        max_digits=10, decimal_places=2, default=0, editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
+        innocence_factor = max(1, self.innocence / 100)
         self.premium_plan = (
             (500 / (1 + self.age))
             + (500 / (1 + self.num_kids))
@@ -35,6 +36,6 @@ class Quote(models.Model):
             + (500 * (1 if self.steady_income else 0))
             + (500 * self.personality / 100)
             + (500 * self.spirituality / 100)
-        ) / (12 * max(1, self.innocence / 100))
+        ) / (12 * innocence_factor)
 
         super().save(*args, **kwargs)

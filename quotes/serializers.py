@@ -12,6 +12,7 @@ class QuoteSerializers(serializers.ModelSerializer):
         fields = [
             'id', 'plan', 'age', 'num_kids', 'num_married', 'cooker',
             'tertiary_education', 'neat', 'personality', 'spirituality',
-            'steady_income', 'innocence', 'plan_name', 'user', 'created_at'
+            'steady_income', 'innocence', 'plan_name', 'user', 'premium_plan',
+            'created_at'
         ]
         read_only_fields = ['premium_plan', 'created_at']
