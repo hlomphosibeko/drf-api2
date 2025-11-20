@@ -1,0 +1,29 @@
+.Button {
+    position: relative;
+    margin: auto;
+}
+
+.Title {
+    padding-top: 100px;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.Text {
+    margin: 20px;
+    padding: 0 90px 0 90px;
+    font-size: 2rem;
+}
+
+Table i {
+    color: #b35b09;
+    text-decoration: none;
+}
+
+/* @media screen and (min-width: 992px) {
+  .Title {
+    padding-top: 100px;
+    font-size: 3rem;
+    text-align: center;
+  }
+} */
